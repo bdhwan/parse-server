@@ -1,8 +1,11 @@
 FROM ubuntu:18.04
 MAINTAINER bdhwan@gmail.com
+
+RUN sed -i 's/archive.ubuntu.com/kr.archive.ubuntu.com/g' /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get install sudo
 RUN apt-get install -y apt-utils
+RUN apt-get install -y build-essential
 RUN apt-get install -y curl
 RUN apt-get install -y git
 RUN apt-get install -y vim
@@ -12,4 +15,4 @@ RUN sudo apt-get install -y nodejs
 RUN sudo npm install -g npm
 RUN sudo npm install -g pm2
 RUN sudo pm2 install pm2-logrotate
-RUN pm2 set pm2-logrotate:max_size 100M
+RUN pm2 set pm2-logrotate:max_size 101M
