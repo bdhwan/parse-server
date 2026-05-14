@@ -14,5 +14,6 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
 RUN sudo npm install -g npm
 RUN sudo npm install -g pm2
+RUN pm2 --version
 RUN sudo pm2 install pm2-logrotate
 RUN pm2 set pm2-logrotate:max_size 101M
